@@ -69,21 +69,18 @@ Each request and response is exchanged in an **encrypted and authenticated messa
 
 ## 🚀 Installation & Usage
 
-### 1. Clone the repository
+### 1. Build the project
+
+Run the two commands, respectively in the Server and the Client folder.
 
 ```bash
-git clone https://github.com/your-username/digital-signature-server.git
-cd digital-signature-server
+gcc -o Server Server.c server_application_protocol.c server_authentication_protocol.c -lcrypto 
+gcc -o Client Client.c client_application_protocol.c client_authentication_protocol.c -lcrypto
 ```
 
-### 2. Build the project
+### 2. Run server and client
 
-```bash
-gcc -o server server.c -lssl -lcrypto
-gcc -o client client.c -lssl -lcrypto
-```
-
-### 3. Run server and client
+Remember to run the server first, as the client expects it to be listening on the specified port when it is run.
 
 ```bash
 ./server
@@ -105,7 +102,7 @@ Clients will connect to the server via TCP sockets, performing authentication an
 
 ## 📚 Context
 
-This project was developed as part of the **Master’s degree in Cybersecurity** at the **University of Pisa**.
+This project was developed as part of the **Master’s degree in Cybersecurity** for the **Foundations of Cybersecurity** course at the **University of Pisa**.
 It demonstrates a practical, standards-based implementation of secure digital identity management using **C and OpenSSL**.
 
 ---
